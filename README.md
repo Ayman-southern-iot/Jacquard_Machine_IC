@@ -66,6 +66,7 @@ observation and inference get blurred, so they are kept apart here.
 | **Images I need from you** | [docs/07-photo-shot-list.md](docs/07-photo-shot-list.md) |
 | **See everything the project still needs** | [docs/08-needed-items.md](docs/08-needed-items.md) |
 | **Go to the factory — take this with you** | [docs/09-field-checklist.md](docs/09-field-checklist.md) |
+| **Printable request — questions + marked photos** | [Jacquard-Information-Request.pdf](Jacquard-Information-Request.pdf) |
 
 ---
 
@@ -98,6 +99,7 @@ Three control boards, one CPU between them, and an FPGA on each.
 ```text
 Jacquard machine/
 ├── README.md                          this file
+├── Jacquard-Information-Request.pdf   printable: all questions + marked board photos
 │
 ├── boards/
 │   ├── 01-hmi-board/                  operator panel + CPU mezzanine

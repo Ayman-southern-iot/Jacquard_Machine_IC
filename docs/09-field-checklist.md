@@ -250,7 +250,7 @@ HMI board SW1 (4-way DIP):     1=____ 2=____ 3=____ 4=____
 
 **Q-20 — Photographs still needed from the boards in hand**
 
-- [ ] **HMI boot flash** — the third memory chip on the plug-in CPU module
+- [ ] **HMI boot flash** — **lift the CPU module off and shoot its UNDERSIDE.** The top side has only three chips and none is the flash
 - [ ] Main board jumper `P1` and its four-row Chinese truth table, close up
 - [ ] The six stepper driver chips, **oblique light** — markings are unreadable in every existing photo
 - [ ] Main board unidentified chips: `U3` `U5` `U7` `U17`–`U19` `U_Z1` `U_K2` `U21` `U22`

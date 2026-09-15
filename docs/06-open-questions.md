@@ -138,7 +138,11 @@ readback returns nothing.
 
 ### 4. HMI boot flash is unidentified
 
-The third memory package on the `GOLDEN COREBOARD` mezzanine has no macro shot.
+The boot flash has no macro shot — and it is **not on the top side of the
+mezzanine**. That side carries exactly three devices: `U6` CY62128 SRAM, `U3`
+K4S561632N SDRAM and `U1` S3C2440AL CPU `[P]`. The flash is therefore on the
+**underside**, which is why it was never photographed. **The mezzanine has to be
+lifted off.**
 Without its marking the firmware storage type and size are unknown — and the
 firmware holds the pattern-file handling and the HMI's half of the bus driver.
 

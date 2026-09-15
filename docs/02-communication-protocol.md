@@ -215,7 +215,9 @@ of useful work currently available to you, and every later step depends on it.
 
 ### Rank 3 — HMI boot flash dump
 
-The mezzanine's third memory package holds the firmware. It has **never been
+The boot flash holds the firmware. It is **not on the top of the mezzanine** —
+that side carries only three devices (`U6` CY62128 SRAM, `U3` K4S561632N SDRAM,
+`U1` S3C2440AL CPU), so the flash must be on the **underside**. It has **never been
 photographed** — the first step is simply to photograph its marking.
 
 Once identified: NOR flash can be read in-circuit with a clip; NAND generally

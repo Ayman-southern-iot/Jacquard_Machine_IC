@@ -46,7 +46,7 @@ available work, and every item unlocks specific analysis.
 
 | ID | Shot | What it unlocks |
 |---|---|---|
-| **IMG-01** | **HMI boot flash** — the third memory chip on the `GOLDEN COREBOARD` mezzanine. Macro, oblique light, marking legible | Firmware storage type and size. Currently the biggest **recoverable** unknown. Decides whether the firmware can be dumped in-circuit or needs desoldering |
+| **IMG-01** | **HMI boot flash — lift the mezzanine off and shoot its UNDERSIDE.** The top side carries only `U6` (SRAM), `U3` (SDRAM) and `U1` (CPU), so the flash is underneath. Also shoot the empty board-to-board sockets | Firmware storage type and size. Currently the biggest **recoverable** unknown. Decides whether the firmware can be dumped in-circuit or needs desoldering |
 | **IMG-02** | **Switch and jumper positions, AS FOUND** — Racking `S1` (4-way DIP), Main `P1` (2-way jumper), HMI `SW1` (4-way DIP). Close enough to read each position. **Before anyone moves them** | `S1` was the node address; `P1` selected one of four machine modes. With the harness gone these are among the only surviving configuration evidence |
 | **IMG-03** | **Main board jumper `P1`** and its four-row printed truth table, close and square-on | The Chinese annotation column — 3 characters on rows 1–3, 2 on row 4. The English rows are already read. Gives us four machine modes a replacement must reproduce |
 | **IMG-04** | **Six stepper driver ICs**, one macro each, **oblique light**, designator in frame | Confirms DRV8818 vs DRV8811 vs A3977 vs something else. These differ in current limit, microstep resolution and decay mode — all of which a replacement must match |

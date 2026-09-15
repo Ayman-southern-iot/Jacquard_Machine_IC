@@ -107,7 +107,7 @@ three boards, a multimeter, and a camera. This is now the project's critical pat
 | **B-11** | Fuse bodies — Main (second), Racking ×2, HMI `F1`/`F2` | Fuse ratings; only Main `F2` = 2 A is known | ☐ |
 | **B-12** | JTAG headers — HMI `JTAG`, Main `J1AG2`, Racking `CON1` | Programmer wiring for D-03 | ☐ |
 | **B-16** | **Main Board 40-pin top IDC and all left-edge headers**, square-on with any silkscreen | Which connector served the carriage — supports C-14 | ☐ |
-| **B-02** | HMI boot flash — third memory chip on the `GOLDEN COREBOARD` mezzanine | Firmware type and size | ☐ |
+| **B-02** | HMI boot flash — **on the UNDERSIDE of the mezzanine**; lift it off. Top side is only SRAM + SDRAM + CPU | Firmware type and size | ☐ |
 
 ### 2.3 Tools needed for Tier 1
 

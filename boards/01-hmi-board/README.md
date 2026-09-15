@@ -34,12 +34,17 @@ If you are replacing this board, those are two separable jobs.
 
 ### 2.1 On the CPU mezzanine (`GOLDEN COREBOARD_V1.20`)
 
+> The mezzanine is a separate PCB with its own designator numbering — its `U1` is
+> the CPU, while the carrier board's `U1` is the Lattice FPGA. Always say which
+> board you mean.
+
 | Part | Package | Function | Image |
 |---|---|---|---|
-| Samsung **S3C2440AL-40** | TQFP/FBGA | ARM920T application processor, 400 MHz grade. This part normally carries embedded Linux or Windows CE. Lot `A1131` `[P]` | [S3C2440AL](images/ics/SAMSUNG-S3C2440AL-40-A1131-ARM-N3HYHG.jpg) |
-| Samsung **K4S561632N-LC75** | TSOP-54 | 256 Mbit (16M × 16) SDRAM, 133 MHz — main system memory `[P]` | [K4S561632N](images/ics/SAMSUNG-125-K4S561632N-LC75-S5616-YAE0426UN.jpg) |
-| Cypress **CY62128EV30LL-45ZXI** | TSOP-32 | 1 Mbit (128K × 8) asynchronous SRAM, 45 ns, low-power — scratch / buffer memory `[P]` | [CY62128EV30LL](images/ics/CY62128EV30LL-45ZXI-1313-K-04-611728.jpg) |
-| **Boot flash** | — | NAND or NOR. **Marking never captured.** Without it the firmware storage type and size are unknown — and this is the single highest-value target for reverse engineering `[?]` | *missing* |
+| `U1` Samsung **S3C2440AL-40** | FBGA | ARM920T application processor, 400 MHz grade. This part normally carries embedded Linux or Windows CE. Lot `A1131` `[P]` | [S3C2440AL](images/ics/SAMSUNG-S3C2440AL-40-A1131-ARM-N3HYHG.jpg) |
+| `U3` Samsung **K4S561632N-LC75** | TSOP-54 | 256 Mbit (16M × 16) SDRAM, 133 MHz — main system memory `[P]` | [K4S561632N](images/ics/SAMSUNG-125-K4S561632N-LC75-S5616-YAE0426UN.jpg) |
+| `U6` Cypress **CY62128EV30LL-45ZXI** | TSOP-32 | 1 Mbit (128K × 8) asynchronous SRAM, 45 ns, low-power — scratch / buffer memory `[P]` | [CY62128EV30LL](images/ics/CY62128EV30LL-45ZXI-1313-K-04-611728.jpg) |
+| **Boot flash** | — | NAND or NOR. **Not on the top side** — that side carries only `U1`, `U3` and `U6` above `[P]`. The flash is therefore on the **underside of the mezzanine**, which is why it was never photographed. **Lift the mezzanine off to reach it.** Holds the firmware `[?]` | *missing* |
+| `Y1` crystal | HC-49 | Marked `TND 16.9344` — **16.9344 MHz** `[P]`. The standard S3C2440 main clock crystal | — |
 
 ### 2.2 On the carrier board
 
