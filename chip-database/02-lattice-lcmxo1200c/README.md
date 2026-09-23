@@ -21,7 +21,7 @@ Main Board's `U28` — same designator name, different chip, different board.
 | Embedded memory | ~9.2 Kbit block RAM + distributed RAM; one source states up to 256 Kbit on-chip flash for the family overall |
 | Instant-on | Yes — internal flash config array, no external boot ROM |
 | Sleep mode | Static Icc drops to <100 µA in Sleep; wake-up ≤800 µs; logic state is **not** retained during sleep |
-| Internal oscillator | 18–26 MHz on-chip CMOS oscillator, routable to the clock tree — no external crystal strictly required for slow logic |
+| Internal oscillator | On-chip CMOS oscillator, commonly cited around 18–26 MHz for one default tap — **flagged on validation**: MachXO's internal oscillator is typically a divided/tapped structure with several selectable output frequencies, so this range should be read as "one commonly cited operating point," not the device's full programmable range, until checked against the specific speed grade's oscillator table |
 | Config interfaces | JTAG background programming; **TransFR** live-update (reprogram while running) |
 | Package (this part) | TQFP-144 |
 | Core voltage | 3.3 V ("C" grade parts) |

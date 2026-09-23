@@ -21,7 +21,7 @@ differential line receiver for RS-422-style signaling, 3.3 V BiCMOS.
 | Receiver sensitivity | ±200 mV differential |
 | Input hysteresis | 50 mV typical |
 | Fail-safe behavior | Defined output on open-circuit, short-circuit, and terminated-idle bus conditions |
-| Power dissipation | ~27 mW typical; ~235 mW with all four channels active at 32 MHz |
+| Power dissipation | ~27 mW typical (quiescent); a figure of ~235 mW at full 32 MHz / 4-channel switching was cited in one cross-referenced source but **not independently re-derived this session** — treat the dynamic-power number as indicative of order-of-magnitude only, not a verified datasheet value |
 | Enable | Common, active-high or active-low input choice |
 | Package | 16-pin SOIC (same footprint family as AM26LV31) |
 | Temperature grade | Industrial version (AM26LV32I) rated −40°C to 85°C |

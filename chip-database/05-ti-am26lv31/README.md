@@ -44,6 +44,15 @@ Each channel: one single-ended input (`nA`), two differential outputs
 (`nY`/`nZ`). Two enable pins (4 and 12) both need to be active for outputs to
 drive.
 
+**Validation note on pins 8 and 16:** the signal pins (1–7, 9–15) were
+directly quoted from a search result citing TI's own pinout diagram — high
+confidence. **Pins 8 (GND) and 16 (VCC) were not explicitly stated in that
+source** and are filled in here by process of elimination (16 total pins − 14
+signal/enable pins = 2 power pins, placed at the conventional diagonal
+corners for a part in this package class). This is a reasonable inference,
+not a directly sourced fact — worth a two-second continuity check against
+the board before treating it as gospel.
+
 ## Board role
 
 Converts 3.3 V single-ended FPGA logic into RS-422 differential pairs for the

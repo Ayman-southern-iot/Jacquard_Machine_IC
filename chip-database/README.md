@@ -5,6 +5,11 @@ Each folder's `README.md` is a self-contained dossier: what the chip is, full
 electrical specs, board role, **lifecycle/sourcing status**, what a
 replacement design needs to know, and a confidence assessment.
 
+**This database has been through a senior-engineer technical audit** —
+every formula checked dimensionally, every claim cross-checked for internal
+consistency, six issues found and corrected. See
+[VALIDATION-REPORT.md](VALIDATION-REPORT.md) for the full audit trail.
+
 **Purpose:** so that any question about a specific chip — "what's the max
 current on the stepper drivers," "can I still buy this part," "why is this
 paired with that" — can be answered from what's recorded here, without

@@ -25,7 +25,7 @@ configuration ROM to intercept.
 | PLLs | 2 on-chip |
 | Package (this part) | TQFP-144 |
 | I/O voltage | Bank-selectable 1.2 / 1.5 / 1.8 / 2.5 / 3.3 V |
-| Config interfaces | JTAG (IEEE 1149.1, ispJTAG), Slave SPI, Master SPI |
+| Config interfaces | JTAG (IEEE 1149.1, ispJTAG); Slave SPI to reprogram the internal flash |
 | Security | On-chip security bit can permanently disable bitstream readback |
 
 ## Board role (inferred, not schematic-confirmed)
@@ -62,6 +62,21 @@ be re-sourced new. Two realistic paths:
 - If readback fails or the security bit is set, the design must be
   re-engineered rather than recovered — see the project's
   `docs/05-replacement-controller-plan.md` §10 for that path.
+
+## Correction from senior-engineer validation pass
+
+An earlier version of this dossier listed **"Master SPI"** as a supported
+configuration mode. That's been removed: Master SPI mode means the FPGA
+itself acts as bus master and reads its configuration from an external SPI
+flash at boot — which contradicts the entire point of the LatticeXP
+architecture (self-configuring from **internal**, on-die flash with no
+external configuration memory at all). That claim was inherited uncritically
+from one of the cross-referenced AI research passes without checking it
+against how this specific device family actually boots. **This is exactly
+the kind of family-conflation error the "family confirmed ≠ exact part
+confirmed" caveat below exists to catch** — likely a mix-up with a different
+Lattice family (later SRAM-configured devices genuinely do support
+Master SPI boot from external flash).
 
 ## Confidence caveats (per methodology cross-check)
 

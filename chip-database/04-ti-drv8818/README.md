@@ -28,7 +28,7 @@ controlling FPGA only needs to supply a STEP pulse train and a DIR level.
 | Blanking / off-time | ~1.25 µs blanking; ~44 µs tOFF with 47 kΩ/1000 pF on the RC pin |
 | Protection | UVLO (VM 6.7–7.5 V), OCP (3.5 A trip, 1.5 µs deglitch, 800 µs retry), TSD (150–160°C) |
 | Package | HTSSOP-28 with PowerPAD (exposed thermal pad), 9.7 × 4.4 mm |
-| Pin-to-pin lineage | Documented upgrade path from the older DRV8811 (lower RDS(on)) |
+| Pin-to-pin lineage | TI documents DRV8818 and DRV8811 as pin-compatible siblings in the same package/footprint — useful if a substitute is ever needed, but **which direction is the "upgrade" (lower RDS(on), better protection) has not been independently confirmed this session** — check TI's own migration table before assuming either part is a strict improvement on the other |
 
 ## Worked example for this board
 

@@ -20,7 +20,7 @@ DRV8818 stepper drivers on this board (see `04-ti-drv8818/`).
 | Command word | **11 bits total**: 8 data bits + 2 DAC-select bits + 1 range bit |
 | Range bit | Selects ×1 or ×2 output multiplier against the reference |
 | Data clocking | Shifted in on the **falling edge** of CLK, MSB first |
-| Max clock rate | ~1 MHz |
+| Max clock rate | ~1 MHz (**flagged on validation** — unlike the other rows in this table, this figure was not independently confirmed against a directly-quoted TI datasheet passage this session; it was carried from a cross-referenced source. Verify against the datasheet's switching-characteristics table, or capture the actual CLK signal with a logic analyzer, before relying on it for timing-critical design work) |
 | Update mechanism | **Double-buffered** — `LOAD` clocks data into the input register; `LDAC` (separate pin) then latches all 4 DAC outputs **simultaneously** |
 | Output formula | `VO = REF × (CODE/256) × (1 + RNG)` |
 | Settling time | 10 µs to within ±0.5 LSB |

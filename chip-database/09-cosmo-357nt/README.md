@@ -28,7 +28,7 @@ sensor input bank on the Main Board.
 | IC max | 50 mA |
 | Package size | ~30% smaller footprint than a conventional DIP optocoupler |
 | Certifications | UL/cUL/VDE/CQC approved |
-| Operating temp | −55°C to +115°C (one source) |
+| Operating temp | −55°C to +115°C (one source) — **flagged on validation**: this range is unusually wide for a small optocoupler of this class and closely resembles the operating-temperature range cited elsewhere in this database for an unrelated part (the AO4606 MOSFET, `−55°C to +150°C`). Possible cross-contamination between sources during the original research pass. Treat as **unverified** until checked against Cosmo's own datasheet directly — a more typical range for this device class is `−30°C to +100°C` or similar |
 
 ## Why it's slow, and why that's fine here
 

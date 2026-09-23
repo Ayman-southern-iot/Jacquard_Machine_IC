@@ -57,6 +57,45 @@ external heatsink — the part would thermally shut down or fail rapidly.
 **This is exactly why determining the HMI board's actual `J15` input voltage
 by tracing (rather than assuming) matters before any powered bench work.**
 
+### Correction from senior-engineer validation pass — the "correct" scenario is not automatically safe either
+
+The 26 W vs. 62 W comparison above correctly shows *relative* severity, but
+taken on its own it can leave the impression that 26 W is a safe, tolerable
+number. Running it through the package's own θJA (junction-to-ambient
+thermal resistance, ~31.2°C/W for this TO-263-5 rating) shows it is not:
+
+```
+ΔTJ ≈ P_DISS × θJA
+```
+
+- At 26 W: `ΔTJ ≈ 26 × 31.2 ≈ 811°C` rise — physically impossible; the part
+  would hit its ~150°C thermal-shutdown threshold almost immediately.
+- Working backward, the **maximum sustainable dissipation** in free air
+  (25°C ambient, 150°C junction limit) is only
+  `(150 − 25) / 31.2 ≈ 4 W`.
+
+**That 4 W ceiling assumes no heatsink and no extra PCB copper pour** — the
+θJA figure is a bare-package, still-air rating. Two things follow:
+
+1. **The board almost certainly does not draw 3 A of continuous load through
+   this regulator** — 3 A was an illustrative worked-example number, not a
+   measured board load. A more realistic HMI logic load (LCD controller,
+   FPGA, small peripherals) is more likely in the 0.3–1 A range. At 1 A and a
+   12 V input: `(12 − 3.3) × 1 ≈ 8.7 W` — still **more than double** the bare
+   4 W free-air ceiling.
+2. **This part therefore needs real heatsinking or substantial copper pour
+   under the TO-263-5 tab to survive at *any* plausible input voltage**, not
+   only the wrong-voltage failure case. The photographed board shows the
+   part on "a large thermal land," which is consistent with the designer
+   having already accounted for this — but it means the safety margin at the
+   *correct* input voltage is genuinely tighter than the original 26 W vs.
+   62 W framing suggested, not a comfortable margin.
+
+**Practical implication:** measure the actual board load current before
+assuming any input voltage is "safe" for this regulator — the load current
+matters as much as the input voltage in this calculation, and the original
+treatment held load current constant while varying only voltage.
+
 ## Lifecycle / sourcing status
 
 Shows up as **discontinued/limited-stock** at some distributors — one

@@ -1,0 +1,44 @@
+Senior-engineer validation pass on chip-database: 6 corrections found and fixed
+
+Re-read every one of the 32 chip-database dossiers with technical audit
+scrutiny: checked every formula dimensionally, cross-checked part-number
+suffixes against claimed speed grades, checked cross-file consistency,
+and flagged any number not backed by a directly-quoted source.
+
+Corrections made:
+- Lattice LFXP3C: removed an incorrect "Master SPI" configuration mode
+  claim. LatticeXP self-configures from internal flash; Master SPI
+  (reading config from an external flash at boot) contradicts that
+  architecture and looks like conflation with a different Lattice
+  family from one of the cross-referenced AI reports.
+- TI DRV8818: the claimed "upgrade path from DRV8811 (lower RDS-on)"
+  had an unconfirmed and likely backward direction. Reworded to state
+  only the confirmed fact (pin-compatible siblings) and flag the
+  improvement direction as unverified.
+- Sipex SP29302: the most substantive finding. The original 26W vs 62W
+  worked example implied 26W was a safe dissipation level. Running the
+  package's own thermal resistance (31.2 C/W) against 26W gives a
+  physically impossible temperature rise - the real free-air-only safe
+  ceiling is roughly 4W. Added the corrected thermal analysis showing
+  this regulator needs real heatsinking at any input voltage, not only
+  in the wrong-voltage failure case, and that load current matters as
+  much as input voltage.
+- Cosmo 357NT: flagged an operating temperature range that closely
+  matched a different, unrelated part (AO4606) elsewhere in this
+  database - likely cross-contamination during the original synthesis.
+- TI TLC5620: flagged the max clock rate figure as not independently
+  re-verified this session, unlike every other row in that table.
+- TI AM26LV32: flagged a specific dynamic power dissipation figure as
+  indicative-only, not independently re-derived.
+
+Also added an explicit confidence footnote to the AM26LV31 pinout table
+distinguishing the 14 directly-sourced pins from the 2 inferred-by-
+elimination power pins.
+
+Full audit trail, methodology, and a table of spot-checks that passed
+(part-number-to-speed-grade consistency, formula arithmetic, etc.) is in
+the new chip-database/VALIDATION-REPORT.md. Overall verdict: the
+knowledge base is fundamentally sound - 6 of 32 dossiers needed a fix,
+none invalidated a chip's core identification or board role.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
