@@ -169,6 +169,16 @@ That is nowhere near enough. `[I]` **There is a carriage-mounted selector driver
 board**, fed over the flexing cable that runs to the traversing head, and it has
 not been opened or photographed.
 
+**The actuator type is now confirmed** — the manufacturer's own published spec
+for this exact model states **"full-jacquard solenoid selection"** (see
+[01-ic-master-list.md](01-ic-master-list.md) §9). So this missing board drives
+a bank of **needle-selection solenoids**, likely one small solenoid driver
+stage per needle position, at a channel count in the hundreds. That's a
+well-understood class of design problem (dense low-side solenoid drive,
+conceptually similar to — just far larger in channel count than — the
+ULN2804A Darlington banks already found on the Main Board), even though the
+specific board is gone.
+
 **This is the largest single gap in the project.** For a drop-in replacement it is
 also the hardest part, because needle-selection timing is what the whole machine
 is built around. Anyone scoping this work should treat the three documented boards

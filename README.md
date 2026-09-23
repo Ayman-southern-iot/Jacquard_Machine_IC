@@ -1,7 +1,8 @@
 # Jacquard Machine — Control Electronics Reverse Engineering
 
 Teardown reference and reverse-engineering workspace for the control electronics
-of a **Julong GDH122SA** jacquard / flat-knitting machine.
+of a **Computerized Flat Knitting Machine, model GD-H122S**, made by
+**Shaoxing Jinhao Machinery**.
 
 **Objective:** build a **drop-in replacement controller**.
 
@@ -163,14 +164,14 @@ US$60.** Full register: [docs/08-needed-items.md](docs/08-needed-items.md).
 
 | # | Task | Cost |
 |---|---|---|
-| 1 | **Answer F-08** — a replacement for *which* machine? The original host is gone | — |
-| 2 | **Answer F-06** — does the machine carcass still exist anywhere? Gates 12 items | — |
-| 3 | Download every datasheet (E-01 … E-11) — free, unblocked | — |
-| 4 | Buy a multimeter, probes, and set up a camera | <US$60 |
-| 5 | Board intake: record `S1` and `P1` switch positions **as found**, rail resistance checks | — |
-| 6 | Macro photography — boot flash, jumper `P1`, stepper ICs, unidentified ICs, pin-1 marks | — |
-| 7 | Continuity mapping — transceiver pin to connector pin (**C-07**) | ~2–3 days |
-| 8 | **Start sourcing a donor selector board (F-07)** — calendar time, not working time | — |
+| 1 | **Call the OEM** — Shaoxing Jinhao Machinery, `0575-84291942` or `jindajx.com`. Ask about spares (especially a selector board) and manuals. See [reference/README.md](reference/README.md) | one phone call |
+| 2 | **Answer F-08** — a replacement for *which* machine? The original host is gone | — |
+| 3 | **Answer F-06** — does the machine carcass still exist anywhere? Gates 12 items | — |
+| 4 | Download every datasheet (E-01 … E-11) — free, unblocked | — |
+| 5 | Buy a multimeter, probes, and set up a camera | <US$60 |
+| 6 | Board intake: record `S1` and `P1` switch positions **as found**, rail resistance checks | — |
+| 7 | Macro photography — boot flash, jumper `P1`, stepper ICs, unidentified ICs, pin-1 marks | — |
+| 8 | Continuity mapping — transceiver pin to connector pin (**C-07**) | ~2–3 days |
 | 9 | Order an HW-USBN-2B clone; run the FPGA IDCODE scan and readback | ~US$25 |
 
 Item 5 matters more than it looks: with the harness gone, the DIP switch and
@@ -190,7 +191,11 @@ The three largest, in order:
    recovered from the machine head. Nothing in hand can drive a needle bed, and
    this cannot be reverse-engineered — only re-engineered
    ([docs/05](docs/05-replacement-controller-plan.md) §10). Any estimate that
-   excludes it is likely about half the real figure.
+   excludes it is likely about half the real figure. The manufacturer's own
+   spec sheet confirms it drives **solenoid** actuators (not piezo or another
+   mechanism) — see [docs/01](docs/01-ic-master-list.md) §9 — which narrows,
+   but does not close, this gap. **Contact the OEM directly** (see below) about
+   sourcing a spare.
 2. ⛔ **The interconnection record is unrecoverable.** The boards were removed
    before any cable or cabinet photographs were taken. Rail assignment, harness
    routing, and sensor-to-signal mapping are permanently gone.
@@ -227,5 +232,8 @@ Full list: [docs/06-open-questions.md](docs/06-open-questions.md).
   what would prove the central ones wrong.
 * Reference designators (`U28`, `J1`, `S1`, …) come from silkscreen visible in the
   overview shots.
-* The **Julong GDH122SA** attribution comes from the machine owner. No make, model
-  or OEM name is silkscreened on any board photographed here.
+* The machine is identified as a **Computerized Flat Knitting Machine, model
+  GD-H122S**, by **Shaoxing Jinhao Machinery** — corrected from an earlier
+  "Julong GDH122SA" misattribution recorded in this project. This comes from
+  the machine owner, not from the hardware — no make, model or OEM name is
+  silkscreened on any board photographed here.

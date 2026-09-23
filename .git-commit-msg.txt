@@ -1,44 +1,43 @@
-Senior-engineer validation pass on chip-database: 6 corrections found and fixed
+Correct machine identification and add manufacturer-confirmed spec sheet
 
-Re-read every one of the 32 chip-database dossiers with technical audit
-scrutiny: checked every formula dimensionally, cross-checked part-number
-suffixes against claimed speed grades, checked cross-file consistency,
-and flagged any number not backed by a directly-quoted source.
+The machine was misidentified throughout this project as "Julong GDH122SA".
+Corrected per the owner to: Computerized Flat Knitting Machine, model
+GD-H122S, manufactured by Shaoxing Jinhao Machinery Co., Ltd. (Shaoxing,
+Zhejiang, China). Replaced in all 8 affected files (README.md and six
+docs/ files), with the historical misattribution noted explicitly rather
+than silently erased.
 
-Corrections made:
-- Lattice LFXP3C: removed an incorrect "Master SPI" configuration mode
-  claim. LatticeXP self-configures from internal flash; Master SPI
-  (reading config from an external flash at boot) contradicts that
-  architecture and looks like conflation with a different Lattice
-  family from one of the cross-referenced AI reports.
-- TI DRV8818: the claimed "upgrade path from DRV8811 (lower RDS-on)"
-  had an unconfirmed and likely backward direction. Reworded to state
-  only the confirmed fact (pin-compatible siblings) and flag the
-  improvement direction as unverified.
-- Sipex SP29302: the most substantive finding. The original 26W vs 62W
-  worked example implied 26W was a safe dissipation level. Running the
-  package's own thermal resistance (31.2 C/W) against 26W gives a
-  physically impossible temperature rise - the real free-air-only safe
-  ceiling is roughly 4W. Added the corrected thermal analysis showing
-  this regulator needs real heatsinking at any input voltage, not only
-  in the wrong-voltage failure case, and that load current matters as
-  much as input voltage.
-- Cosmo 357NT: flagged an operating temperature range that closely
-  matched a different, unrelated part (AO4606) elsewhere in this
-  database - likely cross-contamination during the original synthesis.
-- TI TLC5620: flagged the max clock rate figure as not independently
-  re-verified this session, unlike every other row in that table.
-- TI AM26LV32: flagged a specific dynamic power dissipation figure as
-  indicative-only, not independently re-derived.
+This unlocked real manufacturer research this session - three independent
+listings (manufacturer showroom on made-in-china.com, a reseller spec
+page, and company directory listings) cross-confirm published
+specifications for this exact model, none of which could be derived from
+the boards alone:
 
-Also added an explicit confidence footnote to the AM26LV31 pinout table
-distinguishing the 14 directly-sourced pins from the 2 inferred-by-
-elimination power pins.
+- Needle selection: "full-jacquard solenoid selection" - the first
+  direct confirmation of the missing selector board's actuator type
+  (solenoid, not piezo or another mechanism), narrowing what any future
+  re-engineering effort needs to characterise
+- USB data input - independently corroborates the USB host port already
+  found on the HMI board
+- Take-down: 31 automatically adjustable levels - a concrete candidate
+  for what the Main Board's TLC5620 DAC may be setting
+- 16 yarn carriers, belt-drive AC servo motor, 100-level electronic
+  stitch density, motor-driven racking, stop-motion detection for yarn
+  breaks/knots/shocks/program errors
+- Power: majority of sources say 3-phase AC 220V; one reseller listing
+  says single-phase - recorded as an unresolved discrepancy rather than
+  picked one way
+- Manufacturer contact found: Keyan Industrial Area, Shaoxing, phone
+  0575-84291942, official site jindajx.com (blocked automated fetch,
+  worth a direct visit) - a real, findable lead for spares and manuals,
+  not just a scrapped-machine search
 
-Full audit trail, methodology, and a table of spot-checks that passed
-(part-number-to-speed-grade consistency, formula arithmetic, etc.) is in
-the new chip-database/VALIDATION-REPORT.md. Overall verdict: the
-knowledge base is fundamentally sound - 6 of 32 dossiers needed a fix,
-none invalidated a chip's core identification or board role.
+Updated: docs/01 (full spec table + machine ID), docs/04 (missing-board
+section - solenoid actuator confirmed), docs/06 (needle-selection section
++ machine attribution section), docs/05, docs/07, docs/08 (F-02/F-07
+upgraded from "search for a donor" to "call this specific company"),
+docs/09, reference/README.md (new manufacturer contact section).
+
+All internal links verified resolving after the correction.
 
 Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>

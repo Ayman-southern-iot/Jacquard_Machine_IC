@@ -146,6 +146,72 @@ after the original build.
 
 ## 9. Machine identification
 
-The user reports the machine as a **Julong GDH122SA**. No make, model or OEM name
-is silkscreened on any board photographed here — the attribution comes from
-outside this photo set, not from the hardware.
+The machine is a **Computerized Flat Knitting Machine, model GD-H122S**, made
+by **Shaoxing Jinhao Machinery Co., Ltd.** (绍兴金昊机械制造有限公司), per the
+owner — corrected from an earlier "Julong GDH122SA" misattribution recorded in
+this project. No make, model or OEM name is silkscreened on any board
+photographed here — the identification comes from outside this photo set, not
+from the hardware, so it remains owner-supplied rather than `[P]`
+photo-confirmed until a nameplate is actually photographed (see
+[07-photo-shot-list.md](07-photo-shot-list.md) IMG-39).
+
+**This is a real, findable manufacturer**, located at Keyan Industrial Area,
+Shaoxing County, Zhejiang, China — and web research turned up published specs
+for this exact model from three independent listings (manufacturer showroom
+page on made-in-china.com, a reseller spec page, and search-indexed company
+listings). Full specs recorded here for reference, since none of this could
+be derived from the boards alone:
+
+| Spec | Value | Source agreement |
+|---|---|---|
+| Knitting width | 48″ (one listing also states 56″ as an option) | 3/3 |
+| Gauges available | 6, 7, 8, 10, 12, 14, 16, 18 (one listing omits 8 and 18) | 3/3 |
+| Max knitting speed | 1.2 m/sec (varies with gauge) | 3/3 |
+| Yarn carriers | 16 | 3/3 |
+| Stitch density control | 100 levels, electronically controlled | 3/3 |
+| **Needle selection** | **"Full-jacquard solenoid selection"** | 3/3 — see note below |
+| Racking | Motor-driven, max 2-inch | 2/3 |
+| Sinker system | Spring-type moveable, full sinker | 2/3 |
+| Take-down | Main/sub rollers, 31 automatically adjustable levels | 3/3 |
+| Drive | Belt-drive, **AC servo motor** | 2/3 |
+| Data input | USB; one listing also states 3.5″ floppy disk | 2/3 (floppy: 1/3) |
+| Stop-motion detection | Yarn break, large knot, shock/piece-count, program error | 2/3 |
+| Power | **3-phase AC 220V** (made-in-china + one other listing) vs. **single-phase AC 220V** (one reseller listing) — **unresolved, majority favours 3-phase** | 2/3 vs 1/3 |
+| Dimensions | 2370 mm (L) × 832 mm (W) × 2050 mm (H) | 2/3 |
+| Weight | 1060 kg | 2/3 |
+
+**Why "full-jacquard solenoid selection" matters most of everything above:**
+this is the first direct confirmation — from the manufacturer's own published
+spec, not inference — that the missing carriage/selector board
+([06-open-questions.md](06-open-questions.md) §1) drives the needles with
+**solenoid actuators**, not piezo elements or a different mechanism entirely.
+That materially narrows what a re-engineered selector subsystem would need to
+characterise and drive, if one is ever built from scratch.
+
+**Two other corroborations worth flagging:**
+- **USB data input** on the spec sheet matches the USB host port already
+  found on the HMI board `[P]` — independent confirmation from an outside
+  source of something already observed on the hardware.
+- **31-level adjustable take-down** gives a concrete candidate for what the
+  Main Board's TLC5620 DAC may be setting, alongside stepper current
+  reference — see [chip-database/10-ti-tlc5620/](../chip-database/10-ti-tlc5620/).
+
+**Power spec conflict, unresolved:** the manufacturer's own showroom listing
+(made-in-china.com) states 3-phase AC 220V twice; a separate reseller listing
+states single-phase AC 220V. Single-phase would be consistent with the two
+installed Mean Well NES-350-27 supplies, which are single-phase-input units —
+but that consistency doesn't settle which the OEM actually specifies, since
+a 3-phase mains feed can still be stepped down to single-phase branches
+internally for the control electronics. **Treat this as unresolved** rather
+than picking a side; it doesn't change anything about the boards already
+documented, only the cabinet-level mains wiring this project never
+photographed.
+
+**Company status:** the made-in-china.com listing shows "Last Active: October
+2009" — this may only mean the marketplace listing itself is stale, not that
+the company has closed; the manufacturer's own site (jindajx.com) exists and
+returned a listing for this exact model, but blocked automated fetching. This
+is worth a direct check (visit the site in a browser, or call the contact
+number found in search — `0575-84291942`) before assuming spares or manuals
+are unavailable. See [reference/README.md](../reference/README.md) for the
+full source list.

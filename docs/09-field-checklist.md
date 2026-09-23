@@ -150,8 +150,10 @@ How many: ______  Make: __________________  Model: ___________________
 - [ ] Their connector wiring at the amplifier end
 
 **Q-10 — Machine nameplate**
-› The **Julong GDH122SA** attribution currently rests on nobody having read a
-nameplate.
+› The machine is identified as a **Computerized Flat Knitting Machine, model
+GD-H122S**, by **Shaoxing Jinhao Machinery** — a specific, named manufacturer
+per the owner, but nobody has yet photographed the actual nameplate to
+confirm it against the physical machine.
 
 ```
 Make: _______________  Model: _______________  Serial: _______________

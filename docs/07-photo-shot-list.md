@@ -120,7 +120,7 @@ lost when the boards were pulled.
 |---|---|---|
 | **IMG-37** | **PSU units 3 and 4 nameplates** (the two smaller enclosed supplies), plus their wired DC output terminals | The +12 V rail source and the total power budget. Currently unquantified |
 | **IMG-38** | **Servo amplifier nameplates**, and their connector wiring at the amplifier end | Confirms or refutes the Mitsubishi MR-J inference — the basis for the one part of this system that is a documented standard |
-| **IMG-39** | **Machine nameplate** — make, model, serial, year, voltage, gauge | The `Julong GDH122SA` attribution rests entirely on a verbal report. Sourcing a donor board needs the model confirmed |
+| **IMG-39** | **Machine nameplate** — make, model, serial, year, voltage, gauge | Identified as **Shaoxing Jinhao GD-H122S** per the owner, but that rests entirely on the report, not a photograph. Confirming it against the actual nameplate matters for sourcing a donor board from the correct manufacturer |
 | **IMG-40** | AC voltage-selector switch position on each Mean Well supply | Mains configuration |
 
 ### B4 — Context

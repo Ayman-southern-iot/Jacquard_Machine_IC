@@ -25,7 +25,7 @@ can drive a machine. What has to be acquired first is tracked in
 >
 > | If the target is… | Then |
 > |---|---|
-> | **Other GDH122SA machines still in service** | The strongest case. Those machines supply the field wiring, the needle bed, and a live reference system to test against — which also revives most of the ⏸ items and makes §10.5's "you need a needle bed" a non-issue |
+> | **Other GD-H122S machines still in service** | The strongest case. Those machines supply the field wiring, the needle bed, and a live reference system to test against — which also revives most of the ⏸ items and makes §10.5's "you need a needle bed" a non-issue |
 > | **Rebuilding this machine** | Requires the carcass (**F-06**) and the head. Confirm both exist before planning |
 > | **A product for third parties** | Much larger scope: certification, support, multiple machine variants |
 > | **Learning / archival exercise** | Entirely legitimate — but then stop at Tier 1 and the documentation, and do not buy D-03…D-06 |
@@ -207,7 +207,7 @@ The three things that would reopen this phase, in descending order of likelihood
 | Route | ID | Notes |
 |---|---|---|
 | FPGA bitstream readback succeeds | **C-16** | Recovers the master's pin mapping and possibly its state machine |
-| Source a **donor selector board** from a scrapped Julong GDH122SA | **F-07** | The only route that restores the *other* endpoint. Often cheaper than any amount of analysis |
+| Source a **donor selector board** from a scrapped Shaoxing Jinhao GD-H122S | **F-07** | The only route that restores the *other* endpoint. Often cheaper than any amount of analysis |
 | The machine carcass still exists and the head was not scrapped | **F-06** | Worth one check before accepting the loss |
 
 Full analysis of what survives and what does not:

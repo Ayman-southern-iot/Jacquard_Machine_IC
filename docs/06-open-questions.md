@@ -27,6 +27,19 @@ across all three is 16 Darlington channels, one relay, six stepper phases and tw
 servo pulse outputs — nowhere near a needle bed's requirement. The selector
 electronics lived on the carriage, and they are gone.
 
+**New this session — the actuator type is now confirmed, from outside the
+photo set.** The manufacturer's own published specification for this exact
+model (Shaoxing Jinhao GD-H122S) states **"Full-jacquard solenoid selection"**
+for needle control — confirmed independently across three separate listings.
+This means the missing selector board drives **solenoid actuators**, not
+piezo elements or any other mechanism. It doesn't recover the protocol or the
+board itself, but it removes one entire axis of uncertainty from any future
+re-engineering effort (§1c, §10 of
+[05-replacement-controller-plan.md](05-replacement-controller-plan.md)) —
+a solenoid-driver stage is a far more standard, well-understood design
+problem than an unknown actuator type would have been. Full spec sheet:
+[01-ic-master-list.md](01-ic-master-list.md) §9.
+
 What follows is the honest split between what can still be established and what
 cannot.
 
@@ -86,7 +99,7 @@ Only these, in descending order of likelihood:
 1. **FPGA bitstream readback succeeds** (**C-16**). The master's state machine and
    pin mapping are inside the LFXP3C. Recovery is hard, but the pin mapping alone
    would resolve most of §1a to high confidence and give a real attack on framing.
-2. **A donor selector board** from a scrapped Julong GDH122SA (**F-07**). This is
+2. **A donor selector board** from a scrapped Shaoxing Jinhao GD-H122S (**F-07**). This is
    the only route that restores the *other* endpoint, and therefore the only one
    that can fully answer §1b. Often cheaper than any amount of analysis.
 3. **The machine carcass still exists and the head was not scrapped** (**F-06**).
@@ -255,15 +268,18 @@ from the terminal pins to the rail test points.
 
 ## Context, not blocking
 
-### 15. Machine attribution is external
+### 15. Machine attribution is external, but now specific and traceable
 
-The user reports a **Julong GDH122SA**. No make, model or OEM name is
-silkscreened on any board photographed here. The attribution comes from outside
-this photo set.
+The machine is a **Computerized Flat Knitting Machine, model GD-H122S**, made
+by **Shaoxing Jinhao Machinery** — corrected from an earlier "Julong GDH122SA"
+misattribution recorded in this project. No make, model or OEM name is
+silkscreened on any board photographed here. The identification comes from
+outside this photo set (owner-supplied), not from the hardware.
 
 The `SWG-Yarn-A-02` silkscreen and the `JITIBAN-4` (机台板, "machine platform
 board") naming are consistent with a Chinese-market flat-knitting / jacquard
-controller of the 2010–2013 era, but they do not identify an OEM.
+controller of the 2010–2013 era, and now have a specific named manufacturer to
+check against — worth revisiting once any OEM documentation surfaces.
 
 **Resolves by:** ⏸ **conditional on F-06** — the machine nameplate was on the
 frame. This now matters more than it did: sourcing a donor selector board

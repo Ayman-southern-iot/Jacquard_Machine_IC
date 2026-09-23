@@ -48,7 +48,7 @@ replacement to drop into.** The realistic targets lead to very different project
 
 | If the target is… | Consequence |
 |---|---|
-| **Other GDH122SA machines still in service** | The strongest case by far. A live machine supplies field wiring, a needle bed, and a working reference to test against — reviving most ⏸ items and removing the hardest blocker in [05](05-replacement-controller-plan.md) §10.5 |
+| **Other GD-H122S machines still in service** | The strongest case by far. A live machine supplies field wiring, a needle bed, and a working reference to test against — reviving most ⏸ items and removing the hardest blocker in [05](05-replacement-controller-plan.md) §10.5 |
 | **Rebuilding this machine** | Needs the carcass (F-06) **and** the head. Confirm both exist first |
 | **A product for third parties** | Much larger scope — certification, support, machine variants |
 | **Learning / archival** | Entirely legitimate. But then stop at Tier 1 plus documentation, and do not buy D-03 … D-06 |
@@ -157,9 +157,9 @@ All ⏸ pending the answer to §1. Do not plan around these.
 | **C-01** | Actual output voltage of the NES-350-27 units | Supplies were in the cabinet | ⏸ |
 | **C-05** | AC input selector position on each Mean Well unit | Same | ⏸ |
 | **C-10** | `J1` signal name → physical sensor, via status LEDs | Needs the machine's sensors wired up | ⏸ |
-| **F-02** | OEM operator or service manual | May survive independently of the carcass | ☐ |
+| **F-02** | OEM operator or service manual | **Manufacturer identified and located: Shaoxing Jinhao Machinery, Keyan Industrial Area, Shaoxing, Zhejiang** — call `0575-84291942` or visit `jindajx.com` directly. See [reference/README.md](../reference/README.md) | ☐ |
 | **F-03** | Machine history — was the 2013 Racking Board a field replacement? | Needs records or the previous owner | ⏸ |
-| **F-07** | **Source a donor selector board**, or a scrapped Julong GDH122SA | Independent of this carcass — see §5 | ☐ |
+| **F-07** | **Source a donor selector board** — try the OEM directly first (see F-02's contact), or a scrapped Shaoxing Jinhao GD-H122S | Independent of this carcass — see §5 | ☐ |
 
 ---
 
@@ -229,9 +229,9 @@ carcass and no protocol decode. It is the most solid ground left.
 | **F-08** | **A drop-in replacement for *which* machine?** The host machine is dead and dismantled. See §1.1 — this outranks everything, including the Route A / Route B decision | ☐ |
 | **F-06** | **Does the dead machine carcass still exist anywhere?** Gates 12 items — see §1 | ☐ |
 | **F-04** | What prompted this project — a specific board failure, or obsolescence? | ☐ |
-| **F-07** | Can a donor selector board, or a scrapped Julong GDH122SA, be sourced? | ☐ |
+| **F-07** | Can a donor selector board be sourced — **from the OEM directly (Shaoxing Jinhao Machinery, contact in reference/README.md), or from a scrapped Shaoxing Jinhao GD-H122S**? | ☐ |
 | **F-01** | Translation of jumper `P1`'s Chinese annotations — needs B-05 first | ☐ |
-| **F-02** | Any OEM operator or service manual for the Julong GDH122SA | ☐ |
+| **F-02** | OEM operator or service manual for the Shaoxing Jinhao GD-H122S — **manufacturer identified, contact info in reference/README.md** | ☐ |
 | **F-05** | ~~Is the machine running or dead?~~ | ☑ **Answered: dead** |
 | **F-03** | Machine history — 2013 Racking Board a field replacement? | ⏸ |
 
@@ -243,7 +243,8 @@ carcass and no protocol decode. It is the most solid ground left.
 NOW ─────────────────────────────────────────────────────────────
   Answer F-08 (replacement for WHAT?)  ← outranks everything; see 1.1
   Answer F-06 (carcass still exist?)   ← gates 12 items, one phone call
-  Start F-07 (donor selector board)    ← calendar time, start now
+  Call the OEM (F-02/F-07)             ← Shaoxing Jinhao, 0575-84291942 or
+                                          jindajx.com — spares + manual, one call
   Download E-01 … E-11                 ← free, unblocked, in parallel
   Buy D-01, D-02, D-07                 ← under US$60
 
