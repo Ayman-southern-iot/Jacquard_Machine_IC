@@ -300,7 +300,7 @@ Recorded so nobody re-investigates:
 | Racking Board year cut off in the photo | **2013** `[P]` — readable after edge crop |
 | "Roughly 50 Darlington drivers along the top edge" of the Main Board | **Wrong.** That row is ~36–38 Cosmo 357NT **input** optocouplers. Darlington drive is 16 channels in two DIP-18 ULN2804A |
 | Whether the Main Board has stepper drive | **Yes — six populated channels** |
-| `FU120N` on the HMI unidentified | Still unread as a part number, but its **function** is resolved: DPAK power MOSFET at `U_D7` switching the CCFL backlight inverter via `J3`, gate driven by `Q2`/`Q3`/`Q4` |
+| `FU120N` on the HMI |  **Resolved.** VBsemi FU120N, N-channel 100V MOSFET, DPAK - confirmed by datasheet lookup this session. DPAK power MOSFET at `U_D7` switching the CCFL backlight inverter via `J3`, gate driven by `Q2`/`Q3`/`Q4`. Detail: [docs/10](10-ic-technical-reference.md) section 7.3 |
 | HMI `U8` unidentified | **Unpopulated footprint** |
 | Whether a dedicated power-supply PCB exists | **It does not.** Bought-in Mean Well units; each board regulates locally |
 | Is the machine running or dead? | **Dead**, and dismantled |

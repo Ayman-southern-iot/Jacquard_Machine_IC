@@ -6,8 +6,13 @@ function in one line. Per-board detail lives in each board's own README:
 [02 Main](../boards/02-main-board/README.md) ·
 [03 Racking](../boards/03-racking-board/README.md).
 
+Full datasheet-level detail for every part below — electrical specs, formulas,
+and what each fact changes about the design — is in
+[10-ic-technical-reference.md](10-ic-technical-reference.md).
+
 **Evidence key** — `[P]` part marking read directly off a photograph ·
-`[I]` inferred from package + circuit topology · `[?]` unknown.
+`[I]` inferred from package + circuit topology · `[DS]` confirmed against the
+manufacturer datasheet (see docs/10) · `[?]` unknown.
 
 ---
 
@@ -89,7 +94,7 @@ to external servo amplifiers over a standard encoder/status link — see
 | Sipex **SP29302T5** | HMI (`U20`) | TO-263-5 | 3 A adjustable very-low-dropout regulator. *Filename says "sidex"; the package logo is **Sipex***. | `[P]` |
 | **AMS1117** family | HMI (`U21`, `U22`) | SOT-223 | 1 A LDO linear regulator ×2. Output variant not readable | `[P]` |
 | UTC **TL494** | HMI | SOIC-16 | PWM switching controller — local DC-DC / backlight supply | `[P]` |
-| **FU120N** | HMI (`U_D7`) | DPAK | Marked `FU120N` / `141P1HR4`. Gate driven by `Q2`/`Q3`/`Q4`, output to `J3` → CCFL inverter. Power MOSFET acting as the **backlight switch** | `[I]` |
+| **FU120N** | HMI (`U_D7`) | DPAK | VBsemi N-channel 100V MOSFET, RDS(on) 0.20 Ω. Gate driven by `Q2`/`Q3`/`Q4`, output to `J3` → CCFL inverter. Power MOSFET acting as the **backlight switch**. Detail: [docs/10](10-ic-technical-reference.md) §7.3 | `[DS]` |
 | Alpha & Omega **AO4606** | HMI | SO-8 | Complementary N+P MOSFET pair — load switch / reverse-polarity protection | `[P]` |
 | **UF5408** class | Racking (`D6`) | DO-201 | Ultrafast axial rectifier in the DC input path | `[I]` |
 | Mean Well **NES-350-27** ×2 | PSU rack | enclosed | 27 V / 13 A / 350 W switching supply | `[P]` |

@@ -59,6 +59,7 @@ observation and inference get blurred, so they are kept apart here.
 |---|---|
 | Understand the system in five minutes | [docs/04-interconnection-map.md](docs/04-interconnection-map.md) |
 | Know what every chip does | [docs/01-ic-master-list.md](docs/01-ic-master-list.md) |
+| **Go deep on any one chip — datasheet specs, formulas, why it's here** | [docs/10-ic-technical-reference.md](docs/10-ic-technical-reference.md) |
 | Understand the machine bus | [docs/02-communication-protocol.md](docs/02-communication-protocol.md) |
 | Know the power design | [docs/03-power-architecture.md](docs/03-power-architecture.md) |
 | **Start actual work today** | [docs/05-replacement-controller-plan.md](docs/05-replacement-controller-plan.md) |
@@ -125,7 +126,8 @@ Jacquard machine/
 │   ├── 06-open-questions.md           what is not known, ranked
 │   ├── 07-photo-shot-list.md          every image needed, and what each unlocks
 │   ├── 08-needed-items.md             everything not yet in hand — the master checklist
-│   └── 09-field-checklist.md          printable walk-in checklist for a site visit
+│   ├── 09-field-checklist.md          printable walk-in checklist for a site visit
+│   └── 10-ic-technical-reference.md   datasheet-level deep dive on every chip
 │
 ├── datasheets/                        vendor PDFs (fetch list in README)
 ├── captures/                          continuity tables, logic captures

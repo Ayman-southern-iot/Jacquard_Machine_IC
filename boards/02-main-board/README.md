@@ -56,6 +56,24 @@ Designator-to-channel mapping still needs a dedicated photo.
 > only. The identification rests on package outline plus sense-resistor topology,
 > not on a marking anyone has read.
 
+**Current-set formula, assuming DRV8818 identification is correct** — `[DS]`:
+
+```
+IFS = VREF / (8 × RSENSE)
+```
+
+With `R25` read as **0.25 Ω**, this simplifies to `IFS = VREF / 2` — a VREF of
+1.0 V gives 0.5 A/phase, 1.25 V gives 0.625 A/phase, etc. **This is the direct
+link to the TLC5620 DAC below** (§2.4): the DAC's job is almost certainly to
+generate VREF for these drivers, either one channel per driver via an analog
+mux or a shared reference across a subset. Full derivation and datasheet
+detail: [docs/10](../../docs/10-ic-technical-reference.md) §2.1.
+
+**STEP/DIR simplifies replacement design.** This class of driver does its own
+microstepping internally from a STEP pulse train + DIR level — the FPGA does
+not need to generate microstep waveforms itself. A replacement only needs a
+per-axis pulse generator, which is a small, well-understood piece of logic.
+
 ### 2.3 Field I/O
 
 | Ref | Part | Package | Function | Image |

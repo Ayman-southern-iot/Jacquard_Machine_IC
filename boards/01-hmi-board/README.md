@@ -66,7 +66,7 @@ If you are replacing this board, those are two separable jobs.
 |---|---|---|---|---|
 | `U20` | Sipex **SP29302T5** | TO-263-5 | 3 A adjustable very-low-dropout regulator. Lot `1019LC919`. *The filename reads "sidex"; the logo on the package is **Sipex**.* `[P]` | [SP29302T5](images/ics/sidex-29302T5-1019LC919.jpg) |
 | `U21` `U22` | **AMS1117** family | SOT-223 | 1 A LDO linear regulators, two fitted. Output-voltage variant not determinable from the marking `[P]` package · `[?]` variant | [1117](images/ics/1117M3-1002L-C251480.jpg) |
-| `U_D7` | **FU120N** | DPAK / TO-252 | Marked `FU120N` / `141P1HR4`. Sits between the DC rail and connector `J3`, gate driven by `Q2`/`Q3`/`Q4` (SOT-23, marked `J3Y` = MMBT3904 class). `[I]` **power MOSFET switching the CCFL backlight inverter** — that is, the software brightness / blanking switch | [FU120N](images/ics/FU120N-141P1HR4-%2843%29.jpg) |
+| `U_D7` | **FU120N** | DPAK / TO-252 | VBsemi N-channel 100V MOSFET (RDS(on) 0.20 Ω, Qg 16nC) — confirmed by datasheet lookup. Sits between the DC rail and connector `J3`, gate driven by `Q2`/`Q3`/`Q4` (SOT-23, marked `J3Y` = MMBT3904 class). `[DS]` **power MOSFET switching the CCFL backlight inverter** — that is, the software brightness / blanking switch. Detail: [docs/10](../../docs/10-ic-technical-reference.md) §7.3 | [FU120N](images/ics/FU120N-141P1HR4-%2843%29.jpg) |
 | — | Alpha & Omega **AO4606** | SO-8 | Complementary N+P channel MOSFET pair — load switch / reverse-polarity protection `[P]` part · `[I]` role | [AO4606](images/ics/4606-0J2H.jpg) |
 
 ---
@@ -133,7 +133,7 @@ logic side of the transceivers.
 | Protection | Fuse `F1`, ferrite/choke `FL1`, series diode `D3`, bulk electrolytic `CE0` | `[P]` |
 | Main regulator | `U20` Sipex SP29302T5, 3 A LDO on a large thermal land | `[P]` |
 | Secondary regulators | `U21`, `U22` — AMS1117-class SOT-223 LDOs | `[P]` |
-| Backlight switch | `U_D7` (FU120N) driven by `Q2`/`Q3`/`Q4`, feeding `J3` → CCFL inverter | `[I]` |
+| Backlight switch | `U_D7` (FU120N, confirmed VBsemi 100V N-ch MOSFET) driven by `Q2`/`Q3`/`Q4`, feeding `J3` → CCFL inverter | `[DS]` |
 | Secondary fuse | `F2` | `[P]` |
 
 Input voltage is **not silkscreened** near `J15`. `[I]` most likely 12 V or 24 V
