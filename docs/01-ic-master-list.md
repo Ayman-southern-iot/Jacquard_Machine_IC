@@ -10,6 +10,10 @@ Full datasheet-level detail for every part below — electrical specs, formulas,
 and what each fact changes about the design — is in
 [10-ic-technical-reference.md](10-ic-technical-reference.md).
 
+**The deepest level of detail — one folder per chip, cross-checked across 7
+independent AI research passes, including sourcing/lifecycle status and
+substitute parts — is in [../chip-database/](../chip-database/).**
+
 **Evidence key** — `[P]` part marking read directly off a photograph ·
 `[I]` inferred from package + circuit topology · `[DS]` confirmed against the
 manufacturer datasheet (see docs/10) · `[?]` unknown.
